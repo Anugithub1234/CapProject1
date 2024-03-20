@@ -1,6 +1,2 @@
-FROM ubuntu
-RUN apt-get update
-RUN DEBIAN_FRONTEND="non interative" apt-get -y install tzdata
-RUN apt-get -y install apache2
-ADD . /var/www/html
-ENTRYPOINT apachectl -D FOREGROUND
+FROM ubuntu/apache2
+COPY . /var/www/html/
